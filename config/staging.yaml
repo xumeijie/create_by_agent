@@ -1,0 +1,41 @@
+environment: staging
+
+databases:
+  mysql:
+    host: staging-mysql.example.com
+    port: 3306
+    user: staging_user
+    password: ${STAGING_DB_PASSWORD}
+    database: staging_db
+
+  oracle:
+    host: staging-oracle.example.com
+    port: 1521
+    user: staging_user
+    password: ${STAGING_DB_PASSWORD}
+    database: STAGING
+
+  postgresql:
+    host: staging-pg.example.com
+    port: 5432
+    user: staging_user
+    password: ${STAGING_DB_PASSWORD}
+    database: staging_db
+
+apis:
+  http:
+    base_url: https://staging-api.example.com
+    timeout: 30
+
+  soap:
+    endpoint: https://staging-api.example.com/soap
+    timeout: 30
+
+  graphql:
+    endpoint: https://staging-api.example.com/graphql
+    timeout: 30
+
+timeout: 30
+
+logging:
+  level: INFO

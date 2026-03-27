@@ -1,0 +1,12 @@
+pytest==7.4.3
+pytest-xdist==3.5.0
+pytest-cov==4.1.0
+pytest-timeout==2.2.0
+requests==2.31.0
+pyyaml==6.0.1
+zeep==4.2.1
+mysql-connector-python==8.2.0
+oracledb==1.4.0
+psycopg2-binary==2.9.9
+locust==2.18.0
+allure-pytest==2.13.2

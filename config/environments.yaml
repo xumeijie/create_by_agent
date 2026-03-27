@@ -1,0 +1,141 @@
+# Unified Environment Configuration
+# Update this file with your system's details for easy reuse
+
+environments:
+  dev:
+    name: Development
+    description: Local development environment
+    
+    databases:
+      mysql:
+        host: localhost
+        port: 3306
+        user: root
+        password: password
+        database: test_db
+      
+      oracle:
+        host: localhost
+        port: 1521
+        user: admin
+        password: password
+        database: ORCL
+      
+      postgresql:
+        host: localhost
+        port: 5432
+        user: postgres
+        password: password
+        database: test_db
+    
+    apis:
+      http:
+        base_url: http://localhost:8080
+        timeout: 30
+        headers:
+          Content-Type: application/json
+      
+      soap:
+        endpoint: http://localhost:8080/soap
+        wsdl_path: /wsdl
+        timeout: 30
+      
+      graphql:
+        endpoint: http://localhost:8080/graphql
+        timeout: 30
+
+  staging:
+    name: Staging
+    description: Staging environment for pre-production testing
+    
+    databases:
+      mysql:
+        host: staging-mysql.example.com
+        port: 3306
+        user: staging_user
+        password: ${STAGING_DB_PASSWORD}
+        database: staging_db
+      
+      oracle:
+        host: staging-oracle.example.com
+        port: 1521
+        user: staging_user
+        password: ${STAGING_DB_PASSWORD}
+        database: STAGING
+      
+      postgresql:
+        host: staging-pg.example.com
+        port: 5432
+        user: staging_user
+        password: ${STAGING_DB_PASSWORD}
+        database: staging_db
+    
+    apis:
+      http:
+        base_url: https://staging-api.example.com
+        timeout: 30
+        headers:
+          Content-Type: application/json
+          Authorization: Bearer ${API_TOKEN}
+      
+      soap:
+        endpoint: https://staging-api.example.com/soap
+        wsdl_path: /wsdl
+        timeout: 30
+      
+      graphql:
+        endpoint: https://staging-api.example.com/graphql
+        timeout: 30
+
+  prod:
+    name: Production
+    description: Production environment
+    
+    databases:
+      mysql:
+        host: prod-mysql.example.com
+        port: 3306
+        user: prod_user
+        password: ${PROD_DB_PASSWORD}
+        database: prod_db
+      
+      oracle:
+        host: prod-oracle.example.com
+        port: 1521
+        user: prod_user
+        password: ${PROD_DB_PASSWORD}
+        database: PROD
+      
+      postgresql:
+        host: prod-pg.example.com
+        port: 5432
+        user: prod_user
+        password: ${PROD_DB_PASSWORD}
+        database: prod_db
+    
+    apis:
+      http:
+        base_url: https://api.example.com
+        timeout: 30
+        headers:
+          Content-Type: application/json
+          Authorization: Bearer ${API_TOKEN}
+      
+      soap:
+        endpoint: https://api.example.com/soap
+        wsdl_path: /wsdl
+        timeout: 30
+      
+      graphql:
+        endpoint: https://api.example.com/graphql
+        timeout: 30
+
+# Global settings
+global:
+  timeout: 30
+  logging:
+    level: INFO
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  reporting:
+    html_output: reports/html
+    allure_output: reports/allure-results

@@ -1,0 +1,89 @@
+# .gitignore for Test Automation Framework
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables (SENSITIVE!)
+.env
+.env.local
+.env.*.local
+
+# Report Outputs (optional - commit or not depending on preference)
+# reports/html/
+# reports/allure-results/
+pytest.log
+*.log
+
+# OS Files
+Thumbs.db
+.DS_Store
+*.tmp
+
+# Temporary Files
+.temp/
+temp/
+tmp/
+
+# Database Files (if using local SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Coverage
+.coverage.*
+
+# Cache
+*.cache
+
+# Credentials/Secrets (NEVER commit these!)
+*.key
+*.pem
+secrets.yaml
+credentials.json
+
+# Jenkins
+workspace/
+targets/
